@@ -58,3 +58,14 @@ void process_sensor_block(int32_t *raw_16_samples) {
     /* 2. Exact Bit-for-Bit Reconstruction */
     v4_inverse_2d_4x4(raw_16_samples);
 }
+
+---
+
+## 📄 License & Commercial Terms
+
+This software is dual-licensed:
+
+* **Open Source Use:** Licensed under the [GNU General Public License v3.0 (GPLv3)](LICENSE). Free for open-source projects, academic research, and personal use under GPLv3 terms.
+* **Commercial / Closed-Source Use:** If you wish to integrate `v4s12-embedded` into proprietary firmware, commercial IoT devices, or closed-source products without GPLv3 copyleft restrictions, a private Commercial License is required.
+
+📩 **Commercial Inquiries & Licensing:** `support@v4s12.com`
