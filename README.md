@@ -17,24 +17,24 @@ Leveraging the character table of the Klein Four-Group $V_4 \cong \mathbb{Z}_2 \
 
 | Metric / Parameter | Value | Technical Impact |
 | :--- | :--- | :--- |
-| **Mean Squared Error (MSE)** | `0.0000`[cite: 9] | Exact bit-for-bit lossless reconstruction ($MSE = 0$)[cite: 9]. |
-| **Floating-Point Operations (FLOPs)** | **`0`**[cite: 9] | Eliminates FPU hardware dependency on low-power chips[cite: 9]. |
-| **Latency per $4 \times 4$ Block** | **5.51 ns**[cite: 9] | Sub-microsecond execution directly on ALU registers[cite: 9]. |
-| **Processing Throughput** | **181.2M blocks/s**[cite: 9] | High-sustained rate without floating-point stalls[cite: 9]. |
-| **Spline/Vector Bit-Rate Reduction** | **44.21%**[cite: 9] | Compresses coordinate memory from 3.58 to 2.00 bits/coord[cite: 9]. |
-| **Entropic Truncation (EOB) Advance** | **33.33%**[cite: 9] | Early zero-run termination for RLE/ANS encoders[cite: 9]. |
-| **Token Mixer Acceleration** | **1772.9x** | Compared to FP32 dense attention ($N=4096, D=64$)[cite: 8]. |
+| **Mean Squared Error (MSE)** | `0.0000` | Exact bit-for-bit lossless reconstruction ($MSE = 0$). |
+| **Floating-Point Operations (FLOPs)** | **`0`** | Eliminates FPU hardware dependency on low-power chips. |
+| **Latency per $4 \times 4$ Block** | **5.51 ns** | Sub-microsecond execution directly on ALU registers. |
+| **Processing Throughput** | **181.2M blocks/s** | High-sustained rate without floating-point stalls. |
+| **Spline/Vector Bit-Rate Reduction** | **44.21%** | Compresses coordinate memory from 3.58 to 2.00 bits/coord. |
+| **Entropic Truncation (EOB) Advance** | **33.33%** | Early zero-run termination for RLE/ANS encoders. |
+| **Token Mixer Acceleration** | **1772.9x** | Compared to FP32 dense attention ($N=4096, D=64$). |
 
 ---
 
 ## Core Architectural Pillars
 
 1. **$V_4$ Butterfly Transform ($MSE = 0.0000$):**  
-   Exploiting the involutive property $H_{V_4} \cdot H_{V_4} = 4 I_4$, the 2D inverse transform is calculated by applying the exact same butterfly network followed by an arithmetic bit-shift (`>> 4`, dividing by 16)[cite: 9]. Zero rounding errors[cite: 9].
+   Exploiting the involutive property $H_{V_4} \cdot H_{V_4} = 4 I_4$, the 2D inverse transform is calculated by applying the exact same butterfly network followed by an arithmetic bit-shift (`>> 4`, dividing by 16). Zero rounding errors.
 2. **Strict Memory Independence (SoA Layout):**  
-   Decoupling vector space into 4 orthogonal orbits allows contiguous memory placement via *Structure of Arrays* (SoA), completely eliminating thread contention (*zero false sharing*) and enabling auto-vectorization on SIMD architectures (ARM NEON / AVX2)[cite: 8, 9].
+   Decoupling vector space into 4 orthogonal orbits allows contiguous memory placement via *Structure of Arrays* (SoA), completely eliminating thread contention (*zero false sharing*) and enabling auto-vectorization on SIMD architectures (ARM NEON / AVX2).
 3. **$\mathcal{S}_{12}$ Lattice Geometric Quantization:**  
-   Projects spline control points onto the base-12 coprime residue grid[cite: 9]. Preserves $C^1$ continuity while maintaining sub-pixel distortion ($\sqrt{MSE} \approx 1.04$ px)[cite: 9].
+   Projects spline control points onto the base-12 coprime residue grid. Preserves $C^1$ continuity while maintaining sub-pixel distortion ($\sqrt{MSE} \approx 1.04$ px).
 
 ---
 
