@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/demo_spline.dir/examples/spline_compression_demo.c.o -o demo_spline  libv4s12.a 

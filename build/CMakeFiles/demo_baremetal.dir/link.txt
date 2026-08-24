@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/demo_baremetal.dir/examples/baremetal_arm_cortex_m.c.o -o demo_baremetal  libv4s12.a 

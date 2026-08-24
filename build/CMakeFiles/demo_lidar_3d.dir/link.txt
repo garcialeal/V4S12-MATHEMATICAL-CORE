@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/demo_lidar_3d.dir/examples/lidar_3d_soa_demo.c.o -o demo_lidar_3d  libv4s12.a 

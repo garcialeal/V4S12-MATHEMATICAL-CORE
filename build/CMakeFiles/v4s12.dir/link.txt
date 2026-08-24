@@ -1,0 +1,2 @@
+/usr/bin/ar qc libv4s12.a CMakeFiles/v4s12.dir/src/v4_transform.c.o CMakeFiles/v4s12.dir/src/v4_zigzag.c.o CMakeFiles/v4s12.dir/src/s12_quant.c.o
+/usr/bin/ranlib libv4s12.a

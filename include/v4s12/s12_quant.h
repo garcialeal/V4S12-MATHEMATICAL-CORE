@@ -6,15 +6,14 @@
 #ifndef V4S12_S12_QUANT_H
 #define V4S12_S12_QUANT_H
 
-#include <stdint.h>
-#include <stddef.h>
+#include "v4s12/v4s12.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* Base-12 coprime residue table S12 = {1, 5, 7, 11} (mod 12) */
-static const uint8_t S12_RESIDUES[4] = {1, 5, 7, 11};
+extern const uint8_t S12_RESIDUES[4];
 
 /**
  * @brief Geometric projection of spline coordinates onto the S12 grid.
@@ -22,7 +21,7 @@ static const uint8_t S12_RESIDUES[4] = {1, 5, 7, 11};
  * @param coord Original integer coordinate.
  * @return Projected coordinate matching closest S12 node (preserves C1 continuity).
  */
-int32_t s12_quantize_spline(int32_t coord);
+v4s12_int_t s12_quantize_spline(v4s12_int_t coord);
 
 #ifdef __cplusplus
 }

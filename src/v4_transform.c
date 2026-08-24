@@ -5,7 +5,7 @@
 
 #include "v4s12/v4_transform.h"
 
-void v4_transform_2d_4x4(int32_t block[16]) {
+void v4_transform_2d_4x4(v4s12_int_t block[16]) {
     /* Phase 1: Separable row transform */
     for (size_t i = 0; i < 16; i += 4) {
         v4_transform_1d(&block[i], &block[i + 1], &block[i + 2], &block[i + 3]);
@@ -17,7 +17,7 @@ void v4_transform_2d_4x4(int32_t block[16]) {
     }
 }
 
-void v4_inverse_2d_4x4(int32_t block[16]) {
+void v4_inverse_2d_4x4(v4s12_int_t block[16]) {
     /* Re-apply forward matrix due to self-involutive property H_V4 * H_V4 = 4 * I_4 */
     v4_transform_2d_4x4(block);
 
@@ -27,7 +27,7 @@ void v4_inverse_2d_4x4(int32_t block[16]) {
     }
 }
 
-void v4_kernel_3d_soa(int32_t block_soa[64]) {
+void v4_kernel_3d_soa(v4s12_int_t block_soa[64]) {
     /* Phase 1: X-axis transform (16 lines of 4 elements) */
     for (size_t i = 0; i < 64; i += 4) {
         v4_transform_1d(&block_soa[i], &block_soa[i + 1], 
