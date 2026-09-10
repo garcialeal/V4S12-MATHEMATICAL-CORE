@@ -1,8 +1,0 @@
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/v4s12.dir
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/test_exact_reconstruction.dir
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/demo_baremetal.dir
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/demo_lidar_3d.dir
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/demo_spline.dir
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/test.dir
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/edit_cache.dir
-/home/garci/proyectos/v4s12-embedded/build/CMakeFiles/rebuild_cache.dir

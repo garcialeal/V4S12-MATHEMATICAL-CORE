@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/test_exact_reconstruction.dir/tests/test_exact_reconstruction.c.o -o test_exact_reconstruction  libv4s12.a 

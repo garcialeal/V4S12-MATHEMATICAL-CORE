@@ -1,12 +1,10 @@
-cat << 'EOF' > .gitignore
-# Compilados y binarios de prueba
-test_reconstruction
-demo_spline
-demo_lidar
-test_baremetal
-test_runner
+build/
 *.o
 *.a
 *.so
-*.elf
-EOF
+*.dylib
+*.exe
+demo_*
+test_*
+!tests/*.c
+!examples/*.c
