@@ -1,4 +1,6 @@
 /*
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ *
  * V4S12-MATHEMATICAL-CORE - Multiplication-Free Discrete Geometry Engine
  *
  * Copyright (C) 2026 Antonio García Leal <support@v4s12.com>
