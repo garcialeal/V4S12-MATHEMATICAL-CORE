@@ -69,4 +69,8 @@ if(V4S12_BUILD_EXAMPLES)
 
     add_executable(demo_spline examples/spline_compression_demo.c)
     target_link_libraries(demo_spline PRIVATE v4s12)
+
+    add_executable(demo_dna examples/dna_sequence_v4s12_demo.c)
+    target_link_libraries(demo_dna PRIVATE v4s12)
 endif()
+
